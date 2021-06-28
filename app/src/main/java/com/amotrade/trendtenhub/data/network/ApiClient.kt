@@ -12,7 +12,6 @@ import java.io.IOException
  */
 class ApiClient {
 
-    private var retrofit: Retrofit? = null
 
     private val base_url = "https://github-trending-api.now.sh"
 
@@ -55,13 +54,18 @@ class ApiClient {
         }
     }
 
-    /**
-     * Method to get retrofit instance
-     * @return->Retrofit instance
-     */
-    fun getRetrofitInstance(): Retrofit? {
-        checkNotNull(retrofit) { "ApiClient not initialized, use initialize()" }
-        return retrofit
+    companion object {
+
+        private var retrofit: Retrofit? = null
+
+        /**
+         * Method to get retrofit instance
+         * @return->Retrofit instance
+         */
+        fun getRetrofitInstance(): Retrofit? {
+            checkNotNull(retrofit) { "ApiClient not initialized, use initialize()" }
+            return retrofit
+        }
     }
 
 }
