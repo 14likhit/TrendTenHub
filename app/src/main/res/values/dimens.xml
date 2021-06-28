@@ -18,6 +18,7 @@
     <dimen name="dimen_72dp">72dp</dimen>
     <dimen name="dimen_96dp">96dp</dimen>
     <dimen name="dimen_100dp">100dp</dimen>
+    <dimen name="dimen_260dp">260dp</dimen>
 
 
     <dimen name="dimen_10sp">10sp</dimen>

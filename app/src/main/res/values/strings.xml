@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">TrendTenHub</string>
+    <string name="toolbar_title">Trending</string>
+    <string name="sort_by_stars">Sort By Stars</string>
+    <string name="sort_by_name">Sort By Name</string>
+    <string name="error_msg_1">Something Went Wrong</string>
+    <string name="error_msg_2">An alien is probably blocking your signal.</string>
+    <string name="retry">Retry</string>
+    <string name="default_content_description">Image View</string>
+    <string name="hint_repo_author">Repo Author</string>
+    <string name="hint_repo_name">Repo Name</string>
+    <string name="hint_repo_description">Repo Description</string>
+    <string name="hint_language">Language</string>
+    <string name="hint_star">1400</string>
+    <string name="hint_fork">Fork</string>
+    <string name="reset">Reset</string>
 </resources>
