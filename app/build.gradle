@@ -80,4 +80,7 @@ dependencies {
 
     //Shimmer Library Facebook
     implementation 'com.facebook.shimmer:shimmer:0.5.0@aar'
+
+    //Hamcrest
+    testImplementation "org.hamcrest:hamcrest-all:1.3"
 }
