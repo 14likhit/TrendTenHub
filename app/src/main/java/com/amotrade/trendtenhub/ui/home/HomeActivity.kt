@@ -64,6 +64,8 @@ class HomeActivity : BaseActivity(), SwipeRefreshLayout.OnRefreshListener {
     private fun initViews() {
         activityHomeBinding.swipeRefresh.setOnRefreshListener(this)
 
+        setupToolbar(getString(R.string.toolbar_title), false)
+
         if (gitRepoList == null) {
             gitRepoList = ArrayList()
         }
