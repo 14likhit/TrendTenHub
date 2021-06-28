@@ -1,4 +1,6 @@
 package com.amotrade.trendtenhub.base.data
 
-class ErrorData {
-}
+class ErrorData(
+    val throwable: Throwable,
+    val message: String
+)
