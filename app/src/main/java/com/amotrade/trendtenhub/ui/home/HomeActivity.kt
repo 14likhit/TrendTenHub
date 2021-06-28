@@ -1,12 +1,17 @@
 package com.amotrade.trendtenhub.ui.home
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
 import com.amotrade.trendtenhub.R
+import com.amotrade.trendtenhub.base.BaseActivity
+import com.amotrade.trendtenhub.databinding.ActivityHomeBinding
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity() {
+
+    private lateinit var activityHomeBinding: ActivityHomeBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        activityHomeBinding = DataBindingUtil.setContentView(this, R.layout.activity_home)
     }
 }
