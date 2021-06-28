@@ -56,9 +56,6 @@ class HomeActivity : BaseActivity(), SwipeRefreshLayout.OnRefreshListener {
             errorView()
         })
 
-        homeViewModel.getLoadingGithubRepositoryData().observe(this,{
-
-        })
     }
 
     private fun initViews() {
@@ -104,6 +101,7 @@ class HomeActivity : BaseActivity(), SwipeRefreshLayout.OnRefreshListener {
      */
     private fun loadView() {
         activityHomeBinding.gitRepoListRecyclerView.visibility = View.GONE
+        activityHomeBinding.swipeRefresh.visibility = View.GONE
         activityHomeBinding.errorLayout.errorLinearLayout.visibility = View.GONE
         activityHomeBinding.errorLayout.buttonRetry.visibility = View.GONE
         activityHomeBinding.shimmerListLayout.viewContainerShimmer.startShimmer()
@@ -120,6 +118,7 @@ class HomeActivity : BaseActivity(), SwipeRefreshLayout.OnRefreshListener {
         activityHomeBinding.errorLayout.errorLinearLayout.visibility = View.GONE
         activityHomeBinding.errorLayout.buttonRetry.visibility = View.GONE
         activityHomeBinding.gitRepoListRecyclerView.visibility = View.VISIBLE
+        activityHomeBinding.swipeRefresh.visibility = View.VISIBLE
     }
 
     /**
@@ -129,6 +128,7 @@ class HomeActivity : BaseActivity(), SwipeRefreshLayout.OnRefreshListener {
         activityHomeBinding.shimmerListLayout.viewContainerShimmer.stopShimmer()
         activityHomeBinding.shimmerListLayout.viewContainerShimmer.visibility = View.GONE
         activityHomeBinding.gitRepoListRecyclerView.visibility = View.GONE
+        activityHomeBinding.swipeRefresh.visibility = View.GONE
         activityHomeBinding.errorLayout.errorLinearLayout.visibility = View.VISIBLE
         activityHomeBinding.errorLayout.buttonRetry.visibility = View.VISIBLE
     }
