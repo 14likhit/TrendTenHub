@@ -8,7 +8,7 @@ import retrofit2.http.GET
  */
 interface ApiService {
 
-    @GET("/repositories")
+    @GET("v3/7ef86b70-f1a8-40ab-854c-5d679cd51cd4")
     suspend fun getTrendingGitRepositories(): List<GithubRepositorySchema>
 
 }

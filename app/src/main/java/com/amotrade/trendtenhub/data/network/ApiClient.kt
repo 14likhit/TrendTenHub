@@ -2,6 +2,7 @@ package com.amotrade.trendtenhub.data.network
 
 import android.content.Context
 import okhttp3.*
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
@@ -16,7 +17,7 @@ class ApiClient {
 
         private var retrofit: Retrofit? = null
 
-        private val base_url = "https://github-trending-api.now.sh"
+        private val base_url = "https://run.mocky.io/"
 
         /**
          * Method to get retrofit instance
@@ -33,6 +34,8 @@ class ApiClient {
          */
         fun initialiseRetrofitInstance(context: Context) {
             if (retrofit == null) {
+                val interceptor = HttpLoggingInterceptor()
+                interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
                 //creating new file for caching
                 val httpCacheDirectory = File(context.cacheDir, "httpCache")
                 //creating cache
@@ -56,8 +59,9 @@ class ApiClient {
                                 chain.proceed(offlineRequest)
                             }
                         }
-                    })
+                    }).addInterceptor(interceptor)
                     .build()
+
                 retrofit = Retrofit.Builder()
                     .baseUrl(base_url)
                     .addConverterFactory(GsonConverterFactory.create())
